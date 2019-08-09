@@ -15,4 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('dashboard','DashboardController@index')->name('dashboard');
+
+Route::get('admin/login','AdminLoginController@loginForm')->name('admin.login.form');
+Route::post('admin/login','AdminLoginController@login')->name('login');
+
+Route::middleware('auth')->group(function(){
+
+  Route::get('dashboard','DashboardController@index')->name('dashboard');
+});
+
+Route::get('logout',function(){
+	auth()->logout();
+	return redirect()->route('admin.login.form');
+})->name('logout');
