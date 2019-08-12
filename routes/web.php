@@ -22,6 +22,10 @@ Route::post('admin/login','AdminLoginController@login')->name('login');
 Route::middleware('auth')->group(function(){
 
   Route::get('dashboard','DashboardController@index')->name('dashboard');
+  Route::get('admin/create','UserController@create')->name('admin.create');
+
+  Route::resource('user','UserController');
+
 });
 
 Route::get('logout',function(){
