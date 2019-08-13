@@ -49,78 +49,64 @@
                             </div>
                             <div class="col-md-2">{{$user->type}}</div>
                             <div class="col-md-2">{{$user->phone}}</div>
-                            <div class="col-md-2">{{ucfirst($user->status)}}</div>
-                            <div class="col-md-2"><a href="{{route('user.edit',$user->id)}}">Edit</a> | <a href="{{route('user.destroy',$user->id)}}">Delete</a></div>
+                            <div class="col-md-2"><span @if($user->status == 'inactive')class="badge badge-danger"@endif class="badge badge-success">{{ucfirst($user->status)}}</span></div>
+                            <div class="col-md-2"><a href="{{route('user.edit',$user->id)}}"><span class="mdi mdi-square-edit-outline"></span></a> | <a href="{{route('user.destroy',$user->id)}}"><span style="color:red;" class="mdi mdi-delete"></span></a></div>
                         </div>
 
                     </td>
 
                 </tr>
                 @endforeach
-                <!--
-                <tr>
-                    <td >
-                        <div class="media">
-                            <div class="media-image mr-3 rounded-circle">
-                                <a href="profile.html"><img class="rounded-circle w-45" src="{{asset('Backend/assets/img/user/u2.jpg')}}" alt="customer image"></a>
-                            </div>
-                            <div class="media-body align-self-center">
-                                <a href="profile.html"><h6 class="mt-0 text-dark font-weight-medium">Walter Reuter</h6></a>
-                                <small>@walter.me</small>
-                            </div>
-                        </div>
-                    </td>
-                    <td >5 Orders</td>
-                    <td class="text-dark d-none d-md-block">$200</td>
-                </tr>
-                <tr>
-                    <td >
-                        <div class="media">
-                            <div class="media-image mr-3 rounded-circle">
-                                <a href="profile.html"><img class="rounded-circle w-45" src="{{asset('Backend/assets/img/user/u3.jpg')}}" alt="customer image"></a>
-                            </div>
-                            <div class="media-body align-self-center">
-                                <a href="profile.html"><h6 class="mt-0 text-dark font-weight-medium">Larissa Gebhardt</h6></a>
-                                <small>@larissa.gb</small>
-                            </div>
-                        </div>
-                    </td>
-                    <td >1 Order</td>
-                    <td class="text-dark d-none d-md-block">$50</td>
-                </tr>
-                <tr>
-                    <td >
-                        <div class="media">
-                            <div class="media-image mr-3 rounded-circle">
-                                <a href="profile.html"><img class="rounded-circle w-45" src="{{asset('Backend/assets/img/user/u4.jpg')}}" alt="customer image"></a>
-                            </div>
-                            <div class="media-body align-self-center">
-                                <a href="profile.html"><h6 class="mt-0 text-dark font-weight-medium">Albrecht Straub</h6></a>
-                                <small>@albrech.as</small>
-                            </div>
-                        </div>
-                    </td>
-                    <td >2 Orders</td>
-                    <td class="text-dark d-none d-md-block">$100</td>
-                </tr>
-                <tr>
-                    <td >
-                        <div class="media">
-                            <div class="media-image mr-3 rounded-circle">
-                                <a href="profile.html"><img class="rounded-circle w-45" src="{{asset('Backend/assets/img/user/u5.jpg')}}" alt="customer image"></a>
-                            </div>
-                            <div class="media-body align-self-center">
-                                <a href="profile.html"><h6 class="mt-0 text-dark font-weight-medium">Leopold Ebert</h6></a>
-                                <small>@leopold.et</small>
-                            </div>
-                        </div>
-                    </td>
-                    <td >1 Order</td>
-                    <td class="text-dark d-none d-md-block">$60</td>
-                </tr>
-                -->
                 </tbody>
             </table>
+            <br><br><br><br>
+            <hr>
+            <hr>
+            <br><br><br><br>
+            <table class="table table-responsive">
+                <thead class="thead">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Picture</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                <hr>
+                </thead>
+                <hr>
+                <tbody>
+                @foreach($users as $user)
+                    @php
+                        if($user->file == NULL){
+                            $image = 'Backend/assets/img/user/placeholder.png';
+                        }else{
+                            $image = $user->file;
+                        }
+
+                    @endphp
+                <tr>
+                    <hr>
+                    <td>{{$user->id}}</td>
+                    <td><a href="#"><img class="rounded-circle w-45" src="{{asset($image)}}" alt="admin image"></a></td>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->phone}}</td>
+                    <td>{{$user->type}}</td>
+                    <td>{{$user->status}}</td>
+                    <td><a href="{{route('user.edit',$user->id)}}"><span class="mdi mdi-square-edit-outline"></span></a> |
+
+
+                        <a href="{{route('user.destroy',$user->id)}}"><span style="color:red;" class="mdi mdi-delete"></span></a></td>
+                </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
+
         </div>
 
 

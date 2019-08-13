@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use File;
 
 class UserController extends Controller
 {
@@ -87,9 +88,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        $data['title'] = 'Edit Admin Profile';
+        $data['adminInfo'] = $user;
+        return view('admin.edit',$data);
     }
 
     /**
@@ -101,7 +104,35 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $request->validate([
+            'adminType'=> 'required',
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'status' => 'required'
+        ]);
+        //File Upload
+        $image='';
+        if($request->hasFile('file')){
+            if($request->hasFile('file')){
+                $file = $request->file('file');
+                $file->move('Backend/assets/img/user/',$file->getClientOriginalName());
+                File::delete($request->file);
+                $image = 'Backend/assets/img/user/'.$file->getClientOriginalName();
+            }
+
+        }
+
+        if($image!=NULL){
+            User::where('id',$id)->update(['type'=> $request->adminType,'name'=>$request->name,'phone'=>$request->phone,'email'=>$request->email,'file'=> $image,'status'=>$request->status]);
+            return redirect()->route('user.index');
+        }else{
+            User::where('id',$id)->update(['type'=> $request->adminType,'name'=>$request->name,'phone'=>$request->phone,'email'=>$request->email,'status'=>$request->status]);
+            return redirect()->route('user.index');
+        }
+
+
     }
 
     /**
@@ -112,6 +143,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+      echo $id;
     }
 }
