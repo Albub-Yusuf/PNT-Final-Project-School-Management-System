@@ -148,8 +148,21 @@ class UserController extends Controller
         return redirect()->route('user.index');
     }
 
+    public function restore($id){
+
+        User::withTrashed()->find($id)->restore();
+        return redirect()->route('user.index');
+
+    }
+
     public function delete($id){
 
-       // echo "Deleting Info of id: ".$id;
+        User::where('id',$id)->forceDelete();
+        return redirect()->route('user.index');
+    }
+
+    public function manageAdmin(){
+
+       echo "Inside manageAdmin";
     }
 }
