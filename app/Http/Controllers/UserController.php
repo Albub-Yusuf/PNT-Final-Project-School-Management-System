@@ -141,8 +141,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-      echo $id;
+        User::where('id',$id)->delete();
+        File::delete($request->file);
+        return redirect()->route('user.index');
+    }
+
+    public function delete($id){
+
+       // echo "Deleting Info of id: ".$id;
     }
 }

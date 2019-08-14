@@ -50,7 +50,18 @@
                             <div class="col-md-2">{{$user->type}}</div>
                             <div class="col-md-2">{{$user->phone}}</div>
                             <div class="col-md-2"><span @if($user->status == 'inactive')class="badge badge-danger"@endif class="badge badge-success">{{ucfirst($user->status)}}</span></div>
-                            <div class="col-md-2"><a href="{{route('user.edit',$user->id)}}"><span class="mdi mdi-square-edit-outline"></span></a> | <a href="{{route('user.destroy',$user->id)}}"><span style="color:red;" class="mdi mdi-delete"></span></a></div>
+                            <div class="col-md-2">
+
+                        <a  class="btn" href="{{route('user.edit',$user->id)}}"><span class="mdi mdi-square-edit-outline">Edit</span></a>
+                        <form action="{{route('user.destroy',$user->id)}}" method="post">
+                            @method('DELETE')
+                            @csrf
+                            <input type="hidden" value="{{$user->file}}">
+                            <button  onclick="return confirm('Wanna Delete the record?')" type="submit" class="btn" style=" display: inline-block;"><span style="color:red;" class="mdi mdi-delete"></span>Delete</button>
+                        </form>
+
+
+
                         </div>
 
                     </td>
@@ -97,10 +108,13 @@
                     <td>{{$user->phone}}</td>
                     <td>{{$user->type}}</td>
                     <td>{{$user->status}}</td>
-                    <td><a href="{{route('user.edit',$user->id)}}"><span class="mdi mdi-square-edit-outline"></span></a> |
-
-
-                        <a href="{{route('user.destroy',$user->id)}}"><span style="color:red;" class="mdi mdi-delete"></span></a></td>
+                    <td><a  class="btn" href="{{route('user.edit',$user->id)}}"><span class="mdi mdi-square-edit-outline">Edit</span></a>
+                        <form action="{{route('user.destroy',$user->id)}}" method="post">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn" style=" display: inline-block;"><span style="color:red;" class="mdi mdi-delete"></span>Delete</button>
+                        </form>
+                    </td>
                 </tr>
                     @endforeach
                 </tbody>

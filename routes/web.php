@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function(){
   Route::get('admin/create','UserController@create')->name('admin.create');
 
   Route::resource('user','UserController');
+  Route::get('user/{id}','UserController@delete')->name('user.delete');
 
 });
 
