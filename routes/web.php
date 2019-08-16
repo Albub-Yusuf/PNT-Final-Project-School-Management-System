@@ -25,9 +25,11 @@ Route::middleware('auth')->group(function(){
   Route::get('admin/create','UserController@create')->name('admin.create');
 
   Route::resource('user','UserController');
-  Route::get('user/manage','UserController@manageAdmin')->name('admin.manage');
+  Route::get('user/manage','UserController@manageAdmin')->name('user.manage');
   Route::post('user/{id}/restore','UserController@restore')->name('user.restore');
   Route::post('user/{id}/delete','UserController@delete')->name('user.delete');
+
+  Route::resource('student','StudentController');
 
 });
 

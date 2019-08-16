@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('dashboardContent')
+@section('mainContent')
 
 
     <div class="card card-table-border-none"  data-scroll-height="580">
@@ -63,62 +63,15 @@
 
 
                         </div>
-
+                        </div>
                     </td>
 
                 </tr>
                 @endforeach
                 </tbody>
             </table>
-            <br><br><br><br>
-            <hr>
-            <hr>
-            <br><br><br><br>
-            <table class="table table-responsive">
-                <thead class="thead">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Picture</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Actions</th>
-                </tr>
-                <hr>
-                </thead>
-                <hr>
-                <tbody>
-                @foreach($users as $user)
-                    @php
-                        if($user->file == NULL){
-                            $image = 'Backend/assets/img/user/placeholder.png';
-                        }else{
-                            $image = $user->file;
-                        }
 
-                    @endphp
-                <tr>
-                    <hr>
-                    <td>{{$user->id}}</td>
-                    <td><a href="#"><img class="rounded-circle w-45" src="{{asset($image)}}" alt="admin image"></a></td>
-                    <td>{{$user->name}}</td>
-                    <td>{{$user->email}}</td>
-                    <td>{{$user->phone}}</td>
-                    <td>{{$user->type}}</td>
-                    <td>{{$user->status}}</td>
-                    <td><a  class="btn" href="{{route('user.edit',$user->id)}}"><span class="mdi mdi-square-edit-outline">Edit</span></a>
-                        <form action="{{route('user.destroy',$user->id)}}" method="post">
-                            @method('DELETE')
-                            @csrf
-                            <button type="submit" class="btn" style=" display: inline-block;"><span style="color:red;" class="mdi mdi-delete"></span>Delete</button>
-                        </form>
-                    </td>
-                </tr>
-                    @endforeach
-                </tbody>
-            </table>
+
 
 
         </div>

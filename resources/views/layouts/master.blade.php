@@ -68,7 +68,7 @@
 
         <div class="content-wrapper">
           <div class="content">
-            @yield('dashboardContent')
+            @yield('mainContent')
           </div>
         </div>
 

@@ -16,7 +16,9 @@ class UserController extends Controller
     public function index()
     {
         $data['title']='Admin List';
-        $data['users'] = User::all();
+        $user = new User();
+        $user = $user->all();
+        $data['users'] = $user;
         return view('admin.index',$data);
     }
 
@@ -58,8 +60,8 @@ class UserController extends Controller
         //File Upload
         if($request->hasFile('file')){
             $file = $request->file('file');
-            $file->move('Backend/assets/img/user/',$file->getClientOriginalName());
-            $user['file'] = 'Backend/assets/img/user/'.$file->getClientOriginalName();
+            $file->move('Backend/assets/img/admin/',$file->getClientOriginalName());
+            $user['file'] = 'Backend/assets/img/admin/'.$file->getClientOriginalName();
         }
 
 
@@ -79,7 +81,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -163,6 +165,6 @@ class UserController extends Controller
 
     public function manageAdmin(){
 
-       echo "Inside manageAdmin";
+       echo "Inside manageAdmin aa";
     }
 }

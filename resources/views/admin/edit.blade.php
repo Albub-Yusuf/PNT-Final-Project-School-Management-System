@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('dashboardContent')
+@section('mainContent')
 
     <div class="row">
         <div class="col-lg-8 offset-2">
@@ -57,7 +57,7 @@
                             <div class="col-md-12">
                                 @if(isset($adminInfo) && $adminInfo->file != null)
 
-                                    <img src="{{asset($adminInfo->file)}}" alt="image">
+                                    <img src="{{asset($adminInfo->file)}}" style="width:100px;" alt="image">
                                 @endif
                                 <input input name="file" type="file" class="form-control-file">
                                 <!--<input name="file" type="file" placeholder="Upload File" class="form-control form-control-file"  >-->

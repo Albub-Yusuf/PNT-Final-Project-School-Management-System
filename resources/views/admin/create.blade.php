@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('dashboardContent')
+@section('mainContent')
 
 <div class="row">
     <div class="col-lg-8 offset-2">
