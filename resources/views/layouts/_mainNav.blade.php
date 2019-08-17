@@ -50,7 +50,7 @@
                              <li >
                               <a class="sidenav-item-link" href="chartjs.html">
                                 <span class="nav-text">Send Notice</span>
-                                
+
                               </a>
                             </li>
 
@@ -84,6 +84,12 @@
                       <li >
                         <a class="sidenav-item-link" href="{{route('student.index')}}">
                           <span class="nav-text">Student List</span>
+                        </a>
+                      </li>
+
+                      <li >
+                        <a class="sidenav-item-link" href="{{route('student.request')}}">
+                          <span class="nav-text">Addmission Request</span>
                         </a>
                       </li>
                       <li >

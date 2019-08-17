@@ -10,6 +10,18 @@
                 <div class="card card-mini mb-4">
                     <div class="card-body">
                         <h2 class="mb-1">{{$total_students}}</h2>
+                        <p><a href="{{route('student.request')}}">New Addmission Request</a></p>
+                        <div class="chartjs-wrapper">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-sm-6">
+                <div class="card card-mini mb-4">
+                    <div class="card-body">
+                        <h2 class="mb-1">{{$total_students}}</h2>
                         <p>New Addmission Request</p>
                         <div class="chartjs-wrapper">
                             <canvas id="barChart"></canvas>
@@ -17,6 +29,8 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="col-xl-3 col-sm-6">
                 <div class="card card-mini  mb-4">
                     <div class="card-body">

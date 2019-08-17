@@ -16,14 +16,11 @@ class StudentController extends Controller
     public function index()
     {
         $serial =0;
-
         $data['serial'] =+$serial;
-
         $data['title'] = 'New Student List';
         $data['students'] = Student::orderBy('id','DESC')->paginate(5);
         return view('student.index',$data);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -311,9 +308,6 @@ class StudentController extends Controller
 
     }
 
-
-
-
     /**
      * Remove the specified resource from storage.
      *
@@ -329,4 +323,25 @@ class StudentController extends Controller
 
         return redirect()->route('student.index');
     }
+
+    public function request(){
+
+        $data['title'] = 'Student Addmission Request';
+        $data['requests'] = student::where('status','pending')->orderBy('id','DESC')->get();
+        return view('student.request',$data);
+        //dd($data);
+    }
+
+    public function studentInfo($id){
+
+       $data['title'] = 'Student Info';
+       $data['studentInfo'] = Student::where('id',$id)->first();
+       $session = Student::select('session')->where('id',$id)->get();
+       $class = Student::select('class')->where('id',$id)->get();
+       //dd($session);
+       $data['seat_availability'] = Student::where('session',$data['studentInfo']->session)->where('class',$data['studentInfo']->class)->count();
+       return view('student.requestedStudentInfo',$data);
+    }
+
+
 }

@@ -26,7 +26,8 @@ class Student extends Model
         'student_image',
         'student_signature',
         'guardian_image',
-        'father_occupation'
+        'father_occupation',
+        'status'
 
     ];
 }

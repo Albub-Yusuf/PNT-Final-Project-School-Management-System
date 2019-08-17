@@ -34,6 +34,7 @@ class CreateStudentsTable extends Migration
             $table->text('student_signature')->nullable();
             $table->text('guardian_image')->nullable();
             $table->string('father_occupation')->nullable;
+            $table->enum('status',['pending','selected','rejected','waiting']);
             $table->softDeletes();
             $table->timestamps();
         });

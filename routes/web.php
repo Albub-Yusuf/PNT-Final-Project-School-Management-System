@@ -24,12 +24,17 @@ Route::middleware('auth')->group(function(){
   Route::get('dashboard','DashboardController@index')->name('dashboard');
   Route::get('admin/create','UserController@create')->name('admin.create');
 
+
   Route::resource('user','UserController');
   Route::get('user/manage','UserController@manageAdmin')->name('user.manage');
   Route::post('user/{id}/restore','UserController@restore')->name('user.restore');
   Route::post('user/{id}/delete','UserController@delete')->name('user.delete');
 
+  Route::get('student/request','StudentController@request')->name('student.request');
+  Route::get('student/request/{id}','StudentController@studentInfo')->name('student.request.info');
   Route::resource('student','StudentController');
+
+
 
 });
 
