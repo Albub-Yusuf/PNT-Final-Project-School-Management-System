@@ -47,7 +47,7 @@
                 <form action="{{route('student.destroy',$student->id)}}" method="post">
                     @method('DELETE')
                     @csrf
-                    <button type="submit" class="btn" style=" display: inline-block;"><span style="color:red;" class="mdi mdi-delete"></span>Delete</button>
+                    <button onclick="return confirm('Are you sure to delete this student info?');" type="submit" class="btn" style=" display: inline-block;"><span style="color:red;" class="mdi mdi-delete"></span>Delete</button>
                 </form>
             </td>
         </tr>

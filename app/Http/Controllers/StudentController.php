@@ -322,6 +322,11 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        File::delete($student->student_image);
+        File::delete($student->student_signature);
+        File::delete($student->guardian_image);
+        $student->delete();
+
+        return redirect()->route('student.index');
     }
 }
