@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Student;
 use Illuminate\Http\Request;
 use File;
+use DB;
 
 class StudentController extends Controller
 {
@@ -336,11 +337,59 @@ class StudentController extends Controller
 
        $data['title'] = 'Student Info';
        $data['studentInfo'] = Student::where('id',$id)->first();
-       $session = Student::select('session')->where('id',$id)->get();
-       $class = Student::select('class')->where('id',$id)->get();
+      // $session = Student::select('session')->where('id',$id)->get();
+       //$class = Student::select('class')->where('id',$id)->get();
        //dd($session);
-       $data['seat_availability'] = Student::where('session',$data['studentInfo']->session)->where('class',$data['studentInfo']->class)->count();
+      // $data['seat_availability'] = Student::where('session',$data['studentInfo']->session)->where('class',$data['studentInfo']->class)->count();
        return view('student.requestedStudentInfo',$data);
+    }
+
+    public function admittedStudent(Request $request){
+
+        Student::where('id',$request->id)->update(['status'=>$request->status]);
+        Student::where('id',$request->id)->forceDelete();
+
+        DB::table('selectedStudents')->insert(
+            [
+
+                'roll' => $request->roll,
+                'name' => $request->name,
+                'username' => $request->username,
+                'password' => $request->password,
+                'father_name' => $request->father_name,
+                'mother_name' => $request->mother_name,
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'permanent_address' => $request->permanent_address,
+                'present_address' => $request->present_address,
+                'day' => $request->day,
+                'month' => $request->month,
+                'year' => $request->year,
+                'session' => 2019,
+                'birth_certificate_number' => $request->birth_certificate_number,
+                'nationality' => $request->nationality,
+                'gender' => $request->gender,
+                'class' => $request->class,
+                'department' => $request->department,
+                'student_image' => $request->student_image,
+                'student_signature' => $request->student_signature,
+                'guardian_image' => $request->guardian_image,
+                'father_occupation' => $request->father_occupation,
+                'created_at' => now()
+
+            ]
+        );
+
+        return redirect()->route('dashboard');
+    }
+
+    public function waitingListStudent(Request $request){
+
+        echo "Inside Student Waiting List";
+    }
+
+    public function addguardian(){
+
     }
 
 

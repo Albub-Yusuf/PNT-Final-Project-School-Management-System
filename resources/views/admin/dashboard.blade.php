@@ -2,14 +2,18 @@
 
 @section('mainContent')
     @php
-        $total_students = \App\Student::count();
+   // use Illuminate\Support\Facades\DB;
+
+        $admission_request = \App\Student::count();
+        $total_students = DB::table('selectedStudents')->count();
+
     @endphp
      <!-- Top Statistics -->
         <div class="row">
             <div class="col-xl-3 col-sm-6">
                 <div class="card card-mini mb-4">
                     <div class="card-body">
-                        <h2 class="mb-1">{{$total_students}}</h2>
+                        <h2 class="mb-1">{{$admission_request}}</h2>
                         <p><a href="{{route('student.request')}}">New Addmission Request</a></p>
                         <div class="chartjs-wrapper">
                             <canvas id="barChart"></canvas>
@@ -19,23 +23,10 @@
             </div>
 
             <div class="col-xl-3 col-sm-6">
-                <div class="card card-mini mb-4">
-                    <div class="card-body">
-                        <h2 class="mb-1">{{$total_students}}</h2>
-                        <p>New Addmission Request</p>
-                        <div class="chartjs-wrapper">
-                            <canvas id="barChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-xl-3 col-sm-6">
                 <div class="card card-mini  mb-4">
                     <div class="card-body">
                         <h2 class="mb-1">{{$total_students}}</h2>
-                        <p>Total Students</p>
+                        <p><a href="#">Total Students</a></p>
                         <div class="chartjs-wrapper">
                             <canvas id="dual-line"></canvas>
                         </div>

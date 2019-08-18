@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-8 offset-2">
             <div class="card card-default">
-              
+
                 <div class="card-body">
 
                     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -409,65 +409,63 @@
                                     </div>
                                 </div>
                                 <div style="background-color:transparent;">
-                                    <div class="block-grid three-up" style="Margin: 0 auto; min-width: 320px; max-width: 500px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
-                                        <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
-                                            <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:500px"><tr class="layout-full-width" style="background-color:transparent"><![endif]-->
-                                            <!--[if (mso)|(IE)]><td align="center" width="166" style="background-color:transparent;width:166px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
-                                            <div class="col num4" style="max-width: 320px; min-width: 166px; display: table-cell; vertical-align: top; width: 166px;">
-                                                <div style="width:100% !important;">
-                                                    <!--[if (!mso)&(!IE)]><!-->
-                                                    <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-                                                        <!--<![endif]-->
-                                                        <div align="center" class="button-container" style="padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
-                                                            <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:31.5pt; width:83.25pt; v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#3AAEE0"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#ffffff; font-family:Georgia, 'Times New Roman', serif; font-size:16px"><![endif]-->
-                                                            <div style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#3AAEE0;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;width:auto; width:auto;;border-top:1px solid #3AAEE0;border-right:1px solid #3AAEE0;border-bottom:1px solid #3AAEE0;border-left:1px solid #3AAEE0;padding-top:5px;padding-bottom:5px;font-family:'Droid Serif', Georgia, Times, 'Times New Roman', serif;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:20px;padding-right:20px;font-size:16px;display:inline-block;">
-<span style="font-size: 16px; line-height: 32px;"><strong>Selected</strong></span>
-</span></div>
-                                                            <!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
-                                                        </div>
-                                                        <!--[if (!mso)&(!IE)]><!-->
-                                                    </div>
-                                                    <!--<![endif]-->
-                                                </div>
-                                            </div>
-                                            <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-                                            <!--[if (mso)|(IE)]></td><td align="center" width="166" style="background-color:transparent;width:166px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
-                                            <div class="col num4" style="max-width: 320px; min-width: 166px; display: table-cell; vertical-align: top; width: 166px;">
-                                                <div style="width:100% !important;">
-                                                    <!--[if (!mso)&(!IE)]><!-->
-                                                    <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-                                                        <!--<![endif]-->
-                                                        <div align="center" class="button-container btn" style="padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
-                                                            <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:31.5pt; width:77.25pt; v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#3AAEE0"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#ffffff; font-family:Arial, sans-serif; font-size:16px"><![endif]-->
-                                                            <div style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#3AAEE0;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;width:auto; width:auto;;border-top:1px solid #3AAEE0;border-right:1px solid #3AAEE0;border-bottom:1px solid #3AAEE0;border-left:1px solid #3AAEE0;padding-top:5px;padding-bottom:5px;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:20px;padding-right:20px;font-size:16px;display:inline-block;"><span style="font-size: 12px; line-height: 24px;"><strong><span class="btn btn-warning" style="font-size: 16px; line-height: 32px;">Waiting</span></strong></span></span></div>
-                                                            <!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
-                                                        </div>
-                                                        <!--[if (!mso)&(!IE)]><!-->
-                                                    </div>
-                                                    <!--<![endif]-->
-                                                </div>
-                                            </div>
-                                            <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-                                            <!--[if (mso)|(IE)]></td><td align="center" width="166" style="background-color:transparent;width:166px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
-                                            <div class="col num4" style="max-width: 320px; min-width: 166px; display: table-cell; vertical-align: top; width: 166px;">
-                                                <div style="width:100% !important;">
-                                                    <!--[if (!mso)&(!IE)]><!-->
-                                                    <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-                                                        <!--<![endif]-->
-                                                        <div align="center" class="button-container" style="padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
-                                                            <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:31.5pt; width:84.75pt; v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#3AAEE0"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#ffffff; font-family:Georgia, 'Times New Roman', serif; font-size:16px"><![endif]-->
-                                                            <div style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#3AAEE0;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;width:auto; width:auto;;border-top:1px solid #3AAEE0;border-right:1px solid #3AAEE0;border-bottom:1px solid #3AAEE0;border-left:1px solid #3AAEE0;padding-top:5px;padding-bottom:5px;font-family:'Droid Serif', Georgia, Times, 'Times New Roman', serif;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:20px;padding-right:20px;font-size:16px;display:inline-block;"><span style="font-size: 12px; line-height: 24px;"><strong><span style="font-size: 16px; line-height: 32px;">Rejected</span></strong></span></span></div>
-                                                            <!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
-                                                        </div>
-                                                        <!--[if (!mso)&(!IE)]><!-->
-                                                    </div>
-                                                    <!--<![endif]-->
-                                                </div>
-                                            </div>
-                                            <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-                                            <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
-                                        </div>
-                                    </div>
+
+                                    <table class="table table-responsive no-border">
+                                        <tr>
+                                            <td><form method="post" action="{{route('student.selected')}}">@csrf @method('POST')
+
+                                                    <input type="hidden" name="id" value="{{$studentInfo->id}}">
+                                                    <input type="hidden" name="status" value="selected">
+
+                                                    @php
+                                                        $total_students = DB::table('selectedStudents')->where('session',2019)->where('class',$studentInfo->class)->count();
+                                                        $roll = $total_students + 1;
+                                                     //echo "Roll: ".$roll."out of: ".$total_students;
+                                                    @endphp
+
+                                                    <input type="hidden" name="roll" value="{{$roll}}">
+
+                                                    <input type="hidden" name="name" value="{{$studentInfo->name}}">
+                                                    <input type="hidden" name="username" value="{{$studentInfo->name}}">
+                                                    <input type="hidden" name="password" value="$2y$12$8rV/Z2iKpLwqrcx5Bxou7.CIgl9y1UgBAp45oPYYTc0hCsiqg0r1y">
+                                                    <input type="hidden" name="father_name" value="{{$studentInfo->father_name}}">
+                                                    <input type="hidden" name="mother_name" value="{{$studentInfo->mother_name}}">
+                                                    <input type="hidden" name="phone" value="{{$studentInfo->phone}}">
+                                                    <input type="hidden" name="email" value="{{$studentInfo->email}}">
+                                                    <input type="hidden" name="permanent_address" value="{{$studentInfo->permanent_address}}">
+                                                    <input type="hidden" name="present_address" value="{{$studentInfo->present_address}}">
+                                                    <input type="hidden" name="day" value="{{$studentInfo->day}}">
+                                                    <input type="hidden" name="month" value="{{$studentInfo->month}}">
+                                                    <input type="hidden" name="year" value="{{$studentInfo->year}}">
+                                                    <input type="hidden" name="session" value="{{$studentInfo->session}}">
+                                                    <input type="hidden" name="birth_certificate_number" value="{{$studentInfo->birth_certificate_number}}">
+                                                    <input type="hidden" name="nationality" value="Bangladeshi">
+                                                    <input type="hidden" name="gender" value="{{$studentInfo->gender}}">
+                                                    <input type="hidden" name="class" value="{{$studentInfo->class}}">
+                                                    <input type="hidden" name="department" value="{{$studentInfo->department}}">
+                                                    <input type="hidden" name="student_image" value="{{$studentInfo->student_image}}">
+                                                    <input type="hidden" name="student_signature" value="{{$studentInfo->student_signature}}">
+                                                    <input type="hidden" name="guardian_image" value="{{$studentInfo->guardian_image}}">
+                                                    <input type="hidden" name="father_occupation" value="{{$studentInfo->father_occupation}}">
+
+
+
+
+
+
+
+
+
+                                                    <button type="submit" @if($total_students >= 6) disabled @endif class=" col-lg-8 col-md-8  col-sm-8 offset-2 btn btn-success">@php if($total_students >= 6){echo " No Seat Available";}else{ echo "Selected"; } @endphp</button></form></td>
+
+                                            <td><form action="#" method="post">@csrf @method('POST')<button type="submit" class=" col-lg-8 col-md-8  col-sm-8 offset-2 btn btn-danger">Rejected</button></form></td>
+                                            <td><form method="post" action="{{route('student.waiting')}}">@csrf @method('POST')<button type="submit" class=" col-lg-8  col-md-8 col-sm-8 offset-2 btn btn-primary">Waiting</button></form></td>
+                                        </tr>
+                                    </table>
+
+
+
+
                                 </div>
                                 <div style="background-color:transparent;">
                                     <div class="block-grid" style="Margin: 0 auto; min-width: 320px; max-width: 500px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
@@ -482,7 +480,8 @@
                                                         <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Arial, sans-serif"><![endif]-->
                                                         <div style="color:#555555;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;line-height:120%;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
                                                             <div style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 14px; color: #555555;">
-                                                                <p style="font-size: 14px; line-height: 16px; text-align: center; margin: 0;"><strong><span style="font-size: 16px; line-height: 19px;">Available Seat: 05/50</span></strong></p>
+
+                                                                <p style="font-size: 14px; line-height: 16px; text-align: center; margin: 0;"><strong><span style="font-size: 16px; line-height: 19px;">Available Seat: {{$total_students}}/50</span></strong></p>
                                                             </div>
                                                         </div>
                                                         <!--[if mso]></td></tr></table><![endif]-->

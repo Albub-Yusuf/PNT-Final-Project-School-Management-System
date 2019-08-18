@@ -30,8 +30,11 @@ Route::middleware('auth')->group(function(){
   Route::post('user/{id}/restore','UserController@restore')->name('user.restore');
   Route::post('user/{id}/delete','UserController@delete')->name('user.delete');
 
+
   Route::get('student/request','StudentController@request')->name('student.request');
   Route::get('student/request/{id}','StudentController@studentInfo')->name('student.request.info');
+    Route::post('student/selected','StudentController@admittedStudent')->name('student.selected');
+    Route::post('student/waiting','StudentController@waitingListStudent')->name('student.waiting');
   Route::resource('student','StudentController');
 
 
