@@ -82,7 +82,7 @@
 
 
                       <li >
-                        <a class="sidenav-item-link" href="{{route('student.index')}}">
+                        <a class="sidenav-item-link" href="{{route('student.list')}}">
                           <span class="nav-text">Student List</span>
                         </a>
                       </li>

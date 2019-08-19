@@ -35,7 +35,14 @@ Route::middleware('auth')->group(function(){
   Route::get('student/request/{id}','StudentController@studentInfo')->name('student.request.info');
     Route::post('student/selected','StudentController@admittedStudent')->name('student.selected');
     Route::post('student/waiting','StudentController@waitingListStudent')->name('student.waiting');
-  Route::resource('student','StudentController');
+
+    Route::get('student/list','StudentController@studentList')->name('student.list');
+    Route::post('student/show/list','StudentController@studentSearchByClass')->name('student.show.list');
+    Route::get('student/selected/edit/{id}','StudentController@selectedStudentEdit')->name('student.selected.edit');
+    Route::post('student/selected/discard/{id}','StudentController@selectedStudentDelete')->name('student.selected.discard');
+    Route::post('student/selected/update/{id}','StudentController@selectedStudentUpdate')->name('student.selected.update');
+
+    Route::resource('student','StudentController');
 
 
 

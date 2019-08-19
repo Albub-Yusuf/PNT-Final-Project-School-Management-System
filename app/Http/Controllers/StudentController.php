@@ -16,11 +16,13 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $serial =0;
-        $data['serial'] =+$serial;
-        $data['title'] = 'New Student List';
-        $data['students'] = Student::orderBy('id','DESC')->paginate(5);
-        return view('student.index',$data);
+
+        studentList();
+       // $serial =0;
+       // $data['serial'] =+$serial;
+       // $data['title'] = 'New Student List';
+       // $data['students'] = Student::orderBy('id','DESC')->paginate(5);
+        //return view('student.index',$data);
     }
     /**
      * Show the form for creating a new resource.
@@ -109,7 +111,8 @@ class StudentController extends Controller
 
         ]);
 
-        return redirect()->route('student.index');
+        return redirect()->route('dashboard');
+       // return redirect()->route('student.index');
 
     }
 
@@ -412,6 +415,55 @@ class StudentController extends Controller
     public function addguardian(){
 
     }
+
+    public function studentList(){
+
+        $data['title'] = 'Student List';
+        $data['status'] = 0;
+        return view('student.list',$data);
+
+    }
+
+    public function studentSearchByClass(Request $request){
+
+        $data['title'] = 'Student List';
+        $data['status'] = 1;
+        $data['class'] = $request->classes;
+        $data['students'] = DB::table('selectedStudents')->where([
+         ['sessions', '=', $request->sessions],
+         ['class', '=', $request->classes],
+         ])->get();
+
+       return view('student.list',$data);
+
+
+
+
+    }
+
+    public function selectedStudentEdit($id){
+
+       $data['title'] = 'Student Edit';
+       $data['studentInfo'] = DB::table('selectedStudents')->where([
+           ['id', '=', $id]])->first();
+       //dd($data);
+       return view('student.editstudent',$data);
+
+    }
+
+    public function selectedStudentUpdate(Request $request,$id){
+
+        echo "Inside Update function";
+    }
+
+    public function selectedStudentDelete($id){
+
+        DB::table('selectedStudents')->where('id', '=', $id)->delete();
+        return redirect()->route('dashboard');
+
+    }
+
+
 
 
 }

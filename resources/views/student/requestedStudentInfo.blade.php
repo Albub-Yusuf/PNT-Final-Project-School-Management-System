@@ -457,7 +457,7 @@
 
 
 
-                                                    <button type="submit" @if($total_students >= 10) disabled @endif class=" col-lg-8 col-md-8  col-sm-8 offset-2 btn btn-success">@php if($total_students >= 10){echo " No Seat Available";}else{ echo "Selected"; } @endphp</button></form></td>
+                                                    <button type="submit" @if($total_students >= 50) disabled @endif class=" col-lg-8 col-md-8  col-sm-8 offset-2 btn btn-success">@php if($total_students >= 50){echo " No Seat Available";}else{ echo "Selected"; } @endphp</button></form></td>
 
                                             <td><form action="#" method="post">@csrf @method('POST')<button type="submit" class=" col-lg-8 col-md-8  col-sm-8 offset-2 btn btn-danger">Rejected</button></form></td>
                                             <td><form method="post" action="{{route('student.waiting')}}">@csrf @method('POST')<button type="submit" class=" col-lg-8  col-md-8 col-sm-8 offset-2 btn btn-primary">Waiting</button></form></td>

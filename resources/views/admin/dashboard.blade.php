@@ -26,7 +26,7 @@
                 <div class="card card-mini  mb-4">
                     <div class="card-body">
                         <h2 class="mb-1">{{$total_students}}</h2>
-                        <p><a href="#">Total Students</a></p>
+                        <p><a href="{{route('student.list')}}">Total Students</a></p>
                         <div class="chartjs-wrapper">
                             <canvas id="dual-line"></canvas>
                         </div>

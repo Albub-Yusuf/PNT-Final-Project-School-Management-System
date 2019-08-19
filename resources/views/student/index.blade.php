@@ -22,6 +22,10 @@
     <tbody>
     @php
         $count = 0;
+
+
+
+
     @endphp
     @foreach($students as $student)
 
