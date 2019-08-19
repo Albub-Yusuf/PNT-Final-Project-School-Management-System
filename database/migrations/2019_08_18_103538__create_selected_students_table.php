@@ -15,6 +15,7 @@ class CreateSelectedStudentsTable extends Migration
     {
         Schema::create('selectedStudents', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->Integer('sid');
             $table->Integer('roll');
             $table->string('name');
             $table->string('username');

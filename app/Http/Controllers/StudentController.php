@@ -352,6 +352,7 @@ class StudentController extends Controller
         DB::table('selectedStudents')->insert(
             [
 
+                'sid' => $request->sid,
                 'roll' => $request->roll,
                 'name' => $request->name,
                 'username' => $request->username,
@@ -379,6 +380,26 @@ class StudentController extends Controller
 
             ]
         );
+
+
+
+        DB::table('guardians')->insert(
+            [
+
+                'sid' => $request->sid,
+                'name' => $request->father_name,
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'password' => $request->password,
+                'present_address' => $request->present_address,
+                'permanent_address' => $request->permanent_address,
+                'guardian_image' => $request->guardian_image,
+                'created_at' => now()
+
+            ]
+        );
+
+
 
         return redirect()->route('dashboard');
     }

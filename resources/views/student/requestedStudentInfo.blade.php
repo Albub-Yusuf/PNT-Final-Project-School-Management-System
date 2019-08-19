@@ -426,7 +426,8 @@
                                                     <input type="hidden" name="roll" value="{{$roll}}">
 
                                                     <input type="hidden" name="name" value="{{$studentInfo->name}}">
-                                                    <input type="hidden" name="username" value="{{$studentInfo->name}}">
+                                                    <input type="hidden" name="sid" value="{{$studentInfo->sessions.''.$studentInfo->class.''.$roll}}">
+                                                    <input type="hidden" name="username" value="{{$studentInfo->sessions.''.$studentInfo->class.''.$roll}}">
                                                     <input type="hidden" name="password" value="$2y$12$8rV/Z2iKpLwqrcx5Bxou7.CIgl9y1UgBAp45oPYYTc0hCsiqg0r1y">
                                                     <input type="hidden" name="father_name" value="{{$studentInfo->father_name}}">
                                                     <input type="hidden" name="mother_name" value="{{$studentInfo->mother_name}}">
@@ -456,7 +457,7 @@
 
 
 
-                                                    <button type="submit" @if($total_students >= 6) disabled @endif class=" col-lg-8 col-md-8  col-sm-8 offset-2 btn btn-success">@php if($total_students >= 6){echo " No Seat Available";}else{ echo "Selected"; } @endphp</button></form></td>
+                                                    <button type="submit" @if($total_students >= 10) disabled @endif class=" col-lg-8 col-md-8  col-sm-8 offset-2 btn btn-success">@php if($total_students >= 10){echo " No Seat Available";}else{ echo "Selected"; } @endphp</button></form></td>
 
                                             <td><form action="#" method="post">@csrf @method('POST')<button type="submit" class=" col-lg-8 col-md-8  col-sm-8 offset-2 btn btn-danger">Rejected</button></form></td>
                                             <td><form method="post" action="{{route('student.waiting')}}">@csrf @method('POST')<button type="submit" class=" col-lg-8  col-md-8 col-sm-8 offset-2 btn btn-primary">Waiting</button></form></td>
