@@ -171,7 +171,7 @@
                                                         <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Arial, sans-serif"><![endif]-->
                                                         <div style="color:#555555;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;line-height:120%;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
                                                             <div style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 14px; color: #555555;">
-                                                                <p style="font-size: 14px; line-height: 16px; margin: 0;"><strong>Session: {{$studentInfo->session}}</strong></p>
+                                                                <p style="font-size: 14px; line-height: 16px; margin: 0;"><strong>sessions: {{$studentInfo->sessions}}</strong></p>
                                                             </div>
                                                         </div>
                                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -418,7 +418,7 @@
                                                     <input type="hidden" name="status" value="selected">
 
                                                     @php
-                                                        $total_students = DB::table('selectedStudents')->where('session',2019)->where('class',$studentInfo->class)->count();
+                                                        $total_students = DB::table('selectedStudents')->where('sessions',$studentInfo->sessions)->where('class',$studentInfo->class)->count();
                                                         $roll = $total_students + 1;
                                                      //echo "Roll: ".$roll."out of: ".$total_students;
                                                     @endphp
@@ -437,7 +437,7 @@
                                                     <input type="hidden" name="day" value="{{$studentInfo->day}}">
                                                     <input type="hidden" name="month" value="{{$studentInfo->month}}">
                                                     <input type="hidden" name="year" value="{{$studentInfo->year}}">
-                                                    <input type="hidden" name="session" value="{{$studentInfo->session}}">
+                                                    <input type="hidden" name="sessions" value="{{$studentInfo->sessions}}">
                                                     <input type="hidden" name="birth_certificate_number" value="{{$studentInfo->birth_certificate_number}}">
                                                     <input type="hidden" name="nationality" value="Bangladeshi">
                                                     <input type="hidden" name="gender" value="{{$studentInfo->gender}}">

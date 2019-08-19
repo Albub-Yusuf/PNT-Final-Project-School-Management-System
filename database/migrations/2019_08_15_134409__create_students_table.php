@@ -25,7 +25,7 @@ class CreateStudentsTable extends Migration
             $table->Integer('day');
             $table->Integer('month');
             $table->Integer('year');
-            $table->Integer('session');
+            $table->Integer('sessions');
             $table->string('birth_certificate_number');
             $table->enum('gender',['male','female']);
             $table->Integer('class');

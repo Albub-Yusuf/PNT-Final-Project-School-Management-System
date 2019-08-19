@@ -21,7 +21,7 @@
         <td><img class="user-image" alt="Student Image" style="width:100px;" src="{{asset($request->student_image)}}" alt="student_image"></td>
         <td>{{$request->name}}</td>
         <td>{{$request->father_name}}</td>
-        <td>{{$request->session}}</td>
+        <td>{{$request->sessions}}</td>
         <td>{{$request->class}}</td>
         <td><span @if($request->status == 'pending')class="badge badge-warning"@elseif($request->status == 'selected') class="badge badge-success"@elseif($request->status == 'waiting') class="badge badge-secondary"@endif($request->status=='rejected') class="badge badge-danger">{{ucfirst($request->status)}}</span></td>
         <td><a class="btn btn-secondary btn-sm" href="{{route('student.request.info',$request->id)}}">Show Details</a></td>

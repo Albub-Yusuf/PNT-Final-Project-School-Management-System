@@ -103,7 +103,7 @@ class StudentController extends Controller
         Student::create(['name'=>$request->name,'father_name'=>$request->father_name,
             'mother_name'=>$request->mother_name,'phone'=>$request->phone,'email'=>$request->email,
             'permanent_address'=>$request->permanent_address,'present_address'=>$request->present_address,
-            'day'=>$day,'month'=>$month,'year'=>$year,'session'=>$request->sessions,'birth_certificate_number'=>
+            'day'=>$day,'month'=>$month,'year'=>$year,'sessions'=>$request->sessions,'birth_certificate_number'=>
             $request->birth_certificate,'gender'=>$request->gender,'class'=>$request->classes,'department'=>'None','student_image'=>$student_image,'student_signature'=>$student_signature,'guardian_image'=>$guardian_image,'father_occupation'=>
             $request->father_occupation,
 
@@ -222,7 +222,7 @@ class StudentController extends Controller
             Student::where('id',$student->id)->update(['name'=>$request->name,'father_name'=>$request->father_name,
                 'mother_name'=>$request->mother_name,'phone'=>$request->phone,'email'=>$request->email,
                 'permanent_address'=>$request->permanent_address,'present_address'=>$request->present_address,
-                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'session'=>$request->sessions,'birth_certificate_number'=>
+                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'sessions'=>$request->sessions,'birth_certificate_number'=>
                     $request->birth_certificate,'gender'=>$request->gender,'class'=>$request->classes,'department'=>'None','father_occupation'=>
                     $request->father_occupation
 
@@ -236,7 +236,7 @@ class StudentController extends Controller
             Student::where('id',$student->id)->update(['name'=>$request->name,'father_name'=>$request->father_name,
                 'mother_name'=>$request->mother_name,'phone'=>$request->phone,'email'=>$request->email,
                 'permanent_address'=>$request->permanent_address,'present_address'=>$request->present_address,
-                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'session'=>$request->sessions,'birth_certificate_number'=>
+                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'sessions'=>$request->sessions,'birth_certificate_number'=>
                     $request->birth_certificate,'gender'=>$request->gender,'class'=>$request->classes,'department'=>'None','student_image'=>$studentImage,'father_occupation'=>
                     $request->father_occupation]);
             return redirect()->route('student.index');
@@ -248,7 +248,7 @@ class StudentController extends Controller
             Student::where('id',$student->id)->update(['name'=>$request->name,'father_name'=>$request->father_name,
                 'mother_name'=>$request->mother_name,'phone'=>$request->phone,'email'=>$request->email,
                 'permanent_address'=>$request->permanent_address,'present_address'=>$request->present_address,
-                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'session'=>$request->sessions,'birth_certificate_number'=>
+                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'sessions'=>$request->sessions,'birth_certificate_number'=>
                     $request->birth_certificate,'gender'=>$request->gender,'class'=>$request->classes,'department'=>'None','guardian_image'=>$guardianImage,'father_occupation'=>
                     $request->father_occupation]);
             return redirect()->route('student.index');
@@ -258,7 +258,7 @@ class StudentController extends Controller
             Student::where('id',$student->id)->update(['name'=>$request->name,'father_name'=>$request->father_name,
                 'mother_name'=>$request->mother_name,'phone'=>$request->phone,'email'=>$request->email,
                 'permanent_address'=>$request->permanent_address,'present_address'=>$request->present_address,
-                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'session'=>$request->sessions,'birth_certificate_number'=>
+                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'sessions'=>$request->sessions,'birth_certificate_number'=>
                     $request->birth_certificate,'gender'=>$request->gender,'class'=>$request->classes,'department'=>'None','student_signature'=>$studentSignature,'father_occupation'=>
                     $request->father_occupation]);
             return redirect()->route('student.index');
@@ -270,7 +270,7 @@ class StudentController extends Controller
             Student::where('id',$student->id)->update(['name'=>$request->name,'father_name'=>$request->father_name,
                 'mother_name'=>$request->mother_name,'phone'=>$request->phone,'email'=>$request->email,
                 'permanent_address'=>$request->permanent_address,'present_address'=>$request->present_address,
-                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'session'=>$request->sessions,'birth_certificate_number'=>
+                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'sessions'=>$request->sessions,'birth_certificate_number'=>
                     $request->birth_certificate,'gender'=>$request->gender,'class'=>$request->classes,'department'=>'None','student_image'=>$studentImage,'guardian_image'=>$guardianImage,'father_occupation'=>
                     $request->father_occupation]);
             return redirect()->route('student.index');
@@ -281,7 +281,7 @@ class StudentController extends Controller
             Student::where('id',$student->id)->update(['name'=>$request->name,'father_name'=>$request->father_name,
                 'mother_name'=>$request->mother_name,'phone'=>$request->phone,'email'=>$request->email,
                 'permanent_address'=>$request->permanent_address,'present_address'=>$request->present_address,
-                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'session'=>$request->sessions,'birth_certificate_number'=>
+                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'sessions'=>$request->sessions,'birth_certificate_number'=>
                     $request->birth_certificate,'gender'=>$request->gender,'class'=>$request->classes,'department'=>'None','student_image'=>$studentImage,'student_signature'=>$studentSignature,'father_occupation'=>
                     $request->father_occupation]);
             return redirect()->route('student.index');
@@ -291,7 +291,7 @@ class StudentController extends Controller
             Student::where('id',$student->id)->update(['name'=>$request->name,'father_name'=>$request->father_name,
                 'mother_name'=>$request->mother_name,'phone'=>$request->phone,'email'=>$request->email,
                 'permanent_address'=>$request->permanent_address,'present_address'=>$request->present_address,
-                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'session'=>$request->sessions,'birth_certificate_number'=>
+                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'sessions'=>$request->sessions,'birth_certificate_number'=>
                     $request->birth_certificate,'gender'=>$request->gender,'class'=>$request->classes,'department'=>'None','student_signature'=>$studentSignature,'guardian_image'=>$guardianImage,'father_occupation'=>
                     $request->father_occupation]);
             return redirect()->route('student.index');
@@ -300,7 +300,7 @@ class StudentController extends Controller
             Student::where('id',$student->id)->update(['name'=>$request->name,'father_name'=>$request->father_name,
                 'mother_name'=>$request->mother_name,'phone'=>$request->phone,'email'=>$request->email,
                 'permanent_address'=>$request->permanent_address,'present_address'=>$request->present_address,
-                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'session'=>$request->sessions,'birth_certificate_number'=>
+                'day'=>$request->day,'month'=>$request->month,'year'=>$request->year,'sessions'=>$request->sessions,'birth_certificate_number'=>
                     $request->birth_certificate,'gender'=>$request->gender,'class'=>$request->classes,'department'=>'None','student_image'=>$studentImage,'student_signature'=>$studentSignature,'guardian_image'=>$guardianImage,'father_occupation'=>
                     $request->father_occupation]);
             return redirect()->route('student.index');
@@ -337,10 +337,10 @@ class StudentController extends Controller
 
        $data['title'] = 'Student Info';
        $data['studentInfo'] = Student::where('id',$id)->first();
-      // $session = Student::select('session')->where('id',$id)->get();
+      // $sessions = Student::select('sessions')->where('id',$id)->get();
        //$class = Student::select('class')->where('id',$id)->get();
-       //dd($session);
-      // $data['seat_availability'] = Student::where('session',$data['studentInfo']->session)->where('class',$data['studentInfo']->class)->count();
+       //dd($sessions);
+      // $data['seat_availability'] = Student::where('sessions',$data['studentInfo']->sessions)->where('class',$data['studentInfo']->class)->count();
        return view('student.requestedStudentInfo',$data);
     }
 
@@ -365,7 +365,7 @@ class StudentController extends Controller
                 'day' => $request->day,
                 'month' => $request->month,
                 'year' => $request->year,
-                'session' => 2019,
+                'sessions' => 2019,
                 'birth_certificate_number' => $request->birth_certificate_number,
                 'nationality' => $request->nationality,
                 'gender' => $request->gender,

@@ -14,7 +14,7 @@
         <th scope="col">Father's Name</th>
         <th scope="col">Mother's</th>
         <th scope="col">Address</th>
-        <th scope="col">Session</th>
+        <th scope="col">sessions</th>
         <th scope="col">Class</th>
         <th scope="col">Actions</th>
     </tr>
@@ -41,7 +41,7 @@
             <td>{{$student->father_name}}</td>
             <td>{{$student->mother_name}}</td>
             <td>{{$student->present_address}}</td>
-            <td>{{$student->session}}</td>
+            <td>{{$student->sessions}}</td>
             <td>{{$student->class}}</td>
             <td><a  class="btn" href="{{route('student.edit',$student->id)}}"><span class="mdi mdi-square-edit-outline">Edit</span></a>
                 <form action="{{route('student.destroy',$student->id)}}" method="post">

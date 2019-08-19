@@ -18,7 +18,7 @@ class Student extends Model
         'permanent_address',
         'present_address',
         'day','month','year',
-        'session',
+        'sessions',
         'birth_certificate_number',
         'gender',
         'class',

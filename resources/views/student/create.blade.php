@@ -12,7 +12,7 @@
                         @method('POST')
 
                         <div class="form-group">
-                            <label>Select Session</label>
+                            <label>Select sessions</label>
                             <!--<input type="number" min="2000" max="2099" step="1" value="2019" />-->
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">

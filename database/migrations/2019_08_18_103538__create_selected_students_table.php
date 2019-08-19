@@ -28,7 +28,7 @@ class CreateSelectedStudentsTable extends Migration
             $table->Integer('day');
             $table->Integer('month');
             $table->Integer('year');
-            $table->Integer('session');
+            $table->Integer('sessions');
             $table->string('birth_certificate_number');
             $table->string('nationality');
             $table->enum('gender',['male','female']);

@@ -12,7 +12,7 @@
                         @method('PUT')
 
                         <div class="form-group">
-                            <label>Select Session</label>
+                            <label>Select sessions</label>
                             <!--<input type="number" min="2000" max="2099" step="1" value="2019" />-->
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
@@ -20,7 +20,7 @@
 															<i class="mdi mdi-calendar"></i>
                                                         </span>
                                 </div>
-                                <input type="number" name="sessions" class="form-control" min="2000" max="2099" step="1" value="{{$student_info->session}}" aria-label="sessions">
+                                <input type="number" name="sessions" class="form-control" min="2000" max="2099" step="1" value="{{$student_info->sessions}}" aria-label="sessions">
                             </div>
                             <!--
                             <select name="adminType" class="form-control" id="adminType">
