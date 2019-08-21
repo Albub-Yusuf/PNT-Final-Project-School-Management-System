@@ -453,8 +453,98 @@ class StudentController extends Controller
 
     public function selectedStudentUpdate(Request $request,$id){
 
-        echo "Inside Update function";
-    }
+        //dd($id);
+        $password = bcrypt($request->password);
+        $studentImage='';
+        $sid = $request->sid;
+       // dd($password);
+
+        //File Upload students image
+        $student_image = '';
+
+         if($request->hasFile('student_image')){
+        if($request->hasFile('student_image')){
+        $student_image = $request->file('student_image');
+        $student_image->move('Backend/assets/img/students/',$student_image->getClientOriginalName());
+        File::delete($request->student_image);
+        $studentImage = 'Backend/assets/img/students/'.$student_image->getClientOriginalName();
+
+
+
+        }
+
+        }
+        //dd($studentImage);
+
+        if($request->student_image != NULL){
+            DB::table('selectedStudents')->where('id', $id)->update([
+                'student_image'=>$studentImage,
+                'updated_at'=>now()
+            ]);
+        }
+
+
+
+        if($request->password != NULL){
+
+            DB::table('selectedStudents')->where('id', $id)->update([
+                'name' => $request->name,
+                'username'=>$request->username,
+                'password'=>$password,
+                'pstatus'=>'active',
+                'father_name'=>$request->father_name,
+                'mother_name'=>$request->mother_name,
+                'phone'=>$request->phone,
+                'email'=>$request->email,
+                'permanent_address'=>$request->permanent_address,
+                'present_address'=>$request->present_address,
+                'birth_certificate_number'=>$request->birth_certificate,
+                'updated_at'=>now()
+            ]);
+
+            DB::table('guardians')->where('id',$sid)->update([
+
+                'name'=>$request->father_name,
+                'phone'=>$request->phone,
+                'email'=>$request->email,
+                'permanent_address'=>$request->permanent_address,
+                'updated_at'=>now()
+            ]);
+
+
+
+            return redirect()->route('dashboard');
+        }
+
+        if($request->password == NULL){
+
+            DB::table('selectedStudents')->where('id', $id)->update([
+                'name' => $request->name,
+                'username'=>$request->username,
+                'father_name'=>$request->father_name,
+                'mother_name'=>$request->mother_name,
+                'phone'=>$request->phone,
+                'email'=>$request->email,
+                'permanent_address'=>$request->permanent_address,
+                'present_address'=>$request->present_address,
+                'birth_certificate_number'=>$request->birth_certificate,
+                'updated_at'=>now()
+            ]);
+
+            DB::table('guardians')->where('id',$sid)->update([
+
+                'name'=>$request->father_name,
+                'phone'=>$request->phone,
+                'email'=>$request->email,
+                'permanent_address'=>$request->permanent_address,
+                'updated_at'=>now()
+            ]);
+
+            return redirect()->route('dashboard');
+        }
+        }
+
+
 
     public function selectedStudentDelete($id){
 

@@ -20,6 +20,7 @@ class CreateSelectedStudentsTable extends Migration
             $table->string('name');
             $table->string('username');
             $table->string('password');
+            $table->enum('pstatus',['inactive','active','request']);
             $table->string('father_name');
             $table->string('mother_name');
             $table->string('phone');
