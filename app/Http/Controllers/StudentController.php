@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes;
 use App\Sessions;
 use App\Student;
 use Illuminate\Http\Request;
@@ -33,6 +34,7 @@ class StudentController extends Controller
     public function create()
     {
         $data['title'] = 'Create Student';
+        $data['classes'] = Classes::all();
         return view('student.create',$data);
     }
 
@@ -422,6 +424,7 @@ class StudentController extends Controller
         $data['title'] = 'Student List';
         $data['status'] = 0;
         $data['sessions'] = Sessions::all();
+        $data['classes'] = Classes::all();
        // dd($data);
         return view('student.list',$data);
 
@@ -505,7 +508,7 @@ class StudentController extends Controller
                 'updated_at'=>now()
             ]);
 
-            DB::table('guardians')->where('id',$sid)->update([
+            DB::table('guardians')->where('sid',$sid)->update([
 
                 'name'=>$request->father_name,
                 'phone'=>$request->phone,

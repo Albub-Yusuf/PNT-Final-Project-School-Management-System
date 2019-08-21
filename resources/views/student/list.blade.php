@@ -50,17 +50,10 @@
                                 </div>
                                 <select name="classes" class="form-control" id="classes">
                                     <option value="">Select Class</option>
-                                    <option value="11">Nursery</option>
-                                    <option value="12">KG</option>
-                                    <option value="1">Class 1</option>
-                                    <option value="2">Class 2</option>
-                                    <option value="3">Class 3</option>
-                                    <option value="4">Class 4</option>
-                                    <option value="5">Class 5</option>
-                                    <option value="6">Class 6</option>
-                                    <option value="7">Class 7</option>
-                                    <option value="8">Class 8</option>
-                                    <option value="9">Class 9</option>
+                                        @foreach($classes as $class)
+                                            <option value="{{$class->code}}">{{$class->name}}</option>
+                                        @endforeach
+                                    </select>
 
                                 </select>
                             </div>
