@@ -21,7 +21,14 @@
 															<i class="mdi mdi-calendar"></i>
                                                         </span>
                                 </div>
-                                <input type="number" name="sessions" class="form-control" min="2000" max="2099" step="1" value="2019" aria-label="name">
+                              <!--  <input type="number" name="sessions" class="form-control" min="2000" max="2099" step="1" value="2019" aria-label="name">-->
+
+                                <select name="sessions" class="form-control" id="sessions">
+                                    <option value="">Choose Sesions</option>
+                                   @foreach($sessions as $session_r)
+                                        <option value="{{$session_r->sessions}}">{{$session_r->sessions}}</option>
+                                        @endforeach
+                                </select>
                             </div>
                             <!--
                             <select name="adminType" class="form-control" id="adminType">

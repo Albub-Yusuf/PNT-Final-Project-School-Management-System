@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Sessions;
 use App\Student;
 use Illuminate\Http\Request;
 use File;
@@ -369,7 +370,7 @@ class StudentController extends Controller
                 'day' => $request->day,
                 'month' => $request->month,
                 'year' => $request->year,
-                'sessions' => 2019,
+                'sessions' => $request->sessions,
                 'birth_certificate_number' => $request->birth_certificate_number,
                 'nationality' => $request->nationality,
                 'gender' => $request->gender,
@@ -420,6 +421,8 @@ class StudentController extends Controller
 
         $data['title'] = 'Student List';
         $data['status'] = 0;
+        $data['sessions'] = Sessions::all();
+       // dd($data);
         return view('student.list',$data);
 
     }
@@ -531,7 +534,7 @@ class StudentController extends Controller
                 'updated_at'=>now()
             ]);
 
-            DB::table('guardians')->where('id',$sid)->update([
+            DB::table('guardians')->where('sid',$sid)->update([
 
                 'name'=>$request->father_name,
                 'phone'=>$request->phone,
