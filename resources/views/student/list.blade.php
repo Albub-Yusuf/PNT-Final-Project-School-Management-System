@@ -119,8 +119,8 @@
                             @endphp
                             <tr>
                                 <td>{{$student->roll}}</td>
-                                <td><a href="#"><img class="rounded-circle w-45" src="{{asset($image)}}" alt="student image"></a></td>
-                                <td>{{$student->name}}</td>
+                                <td><a href="{{route('student.profile',$student->id)}}"><img class="rounded-circle w-45" src="{{asset($image)}}" alt="student image"></a></td>
+                                <td><a href="{{route('student.profile',$student->id)}}">{{$student->name}}</a></td>
                                 <td>{{$student->father_name}}</td>
                                 <td>{{$student->mother_name}}</td>
                                 <td>{{$student->present_address}}</td>

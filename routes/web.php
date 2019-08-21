@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function(){
 
   Route::get('student/request','StudentController@request')->name('student.request');
   Route::get('student/request/{id}','StudentController@studentInfo')->name('student.request.info');
+  Route::get('student/selected/profile/{id}','StudentController@studentProfile')->name('student.profile');
     Route::post('student/selected','StudentController@admittedStudent')->name('student.selected');
     Route::post('student/waiting','StudentController@waitingListStudent')->name('student.waiting');
 

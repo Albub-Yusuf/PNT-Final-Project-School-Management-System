@@ -550,6 +550,15 @@ class StudentController extends Controller
         }
         }
 
+        public function studentProfile($id){
+
+            $data['title'] = 'Student Profile';
+            $data['studentInfo'] = DB::table('selectedStudents')->where([
+                ['id', '=', $id]])->first();
+            return view('student.profile',$data);
+
+        }
+
 
 
     public function selectedStudentDelete($id){
