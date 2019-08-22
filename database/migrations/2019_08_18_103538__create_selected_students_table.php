@@ -39,7 +39,7 @@ class CreateSelectedStudentsTable extends Migration
             $table->text('student_image')->nullable();
             $table->text('student_signature')->nullable();
             $table->text('guardian_image')->nullable();
-            $table->string('father_occupation')->nullable;
+            $table->string('father_occupation')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

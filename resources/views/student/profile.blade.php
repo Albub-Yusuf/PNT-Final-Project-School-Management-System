@@ -10,7 +10,17 @@
                     <div class="profile-content-left pt-5 pb-3 px-3 px-xl-5">
                         <div class="card text-center widget-profile px-0 border-0">
                             <div class="card-img mx-auto " style="width:100%; height:20%;">
-                                <img class="" style="width:100%;" src="{{asset($studentInfo->student_image)}}" alt="student image">
+                                @php
+                                    if($studentInfo->student_image == NULL)
+                                    {
+                                        $image = 'Backend/assets/img/students/placeholder.png';
+                                    }else
+                                    {
+                                        $image = $studentInfo->student_image;
+                                    }
+                                @endphp
+
+                                <img class="" style="width:100%;" src="{{asset($image)}}" alt="student image">
                             </div>
                             <div class="card-body">
                                 <h4 class="py-2 text-dark">{{$studentInfo->name}}</h4>
