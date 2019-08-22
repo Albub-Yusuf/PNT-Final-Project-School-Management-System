@@ -459,8 +459,46 @@
 
                                                     <button type="submit" @if($total_students >= 50) disabled @endif class=" col-lg-8 col-md-8  col-sm-8 offset-2 btn btn-success">@php if($total_students >= 50){echo " No Seat Available";}else{ echo "Selected"; } @endphp</button></form></td>
 
-                                            <td><form action="#" method="post">@csrf @method('POST')<button type="submit" class=" col-lg-8 col-md-8  col-sm-8 offset-2 btn btn-danger">Rejected</button></form></td>
-                                            <td><form method="post" action="{{route('student.waiting')}}">@csrf @method('POST')<button type="submit" class=" col-lg-8  col-md-8 col-sm-8 offset-2 btn btn-primary">Waiting</button></form></td>
+                                            <td>
+                                                <form action="{{route('student.rejected')}}" method="post">
+                                                    @csrf
+                                                    @method('POST')
+
+                                                    <input type="hidden" name="id" value="{{$studentInfo->id}}">
+
+                                                    <button type="submit" class=" col-lg-8 col-md-8  col-sm-8 offset-2 btn btn-danger">Rejected</button></form></td>
+                                            <td><form method="post" action="{{route('student.waiting')}}">
+
+                                                    @csrf
+                                                    @method('POST')
+
+                                                    <input type="hidden" name="id" value="{{$studentInfo->id}}">
+                                                    <input type="hidden" name="status" value="waiting">
+                                                    <input type="hidden" name="name" value="{{$studentInfo->name}}">
+                                                    <input type="hidden" name="father_name" value="{{$studentInfo->father_name}}">
+                                                    <input type="hidden" name="mother_name" value="{{$studentInfo->mother_name}}">
+                                                    <input type="hidden" name="phone" value="{{$studentInfo->phone}}">
+                                                    <input type="hidden" name="email" value="{{$studentInfo->email}}">
+                                                    <input type="hidden" name="permanent_address" value="{{$studentInfo->permanent_address}}">
+                                                    <input type="hidden" name="present_address" value="{{$studentInfo->present_address}}">
+                                                    <input type="hidden" name="day" value="{{$studentInfo->day}}">
+                                                    <input type="hidden" name="month" value="{{$studentInfo->month}}">
+                                                    <input type="hidden" name="year" value="{{$studentInfo->year}}">
+                                                    <input type="hidden" name="sessions" value="{{$studentInfo->sessions}}">
+                                                    <input type="hidden" name="birth_certificate_number" value="{{$studentInfo->birth_certificate_number}}">
+                                                    <input type="hidden" name="gender" value="{{$studentInfo->gender}}">
+                                                    <input type="hidden" name="class" value="{{$studentInfo->class}}">
+                                                    <input type="hidden" name="department" value="{{$studentInfo->department}}">
+                                                    <input type="hidden" name="student_image" value="{{$studentInfo->student_image}}">
+                                                    <input type="hidden" name="student_signature" value="{{$studentInfo->student_signature}}">
+                                                    <input type="hidden" name="guardian_image" value="{{$studentInfo->guardian_image}}">
+                                                    <input type="hidden" name="father_occupation" value="{{$studentInfo->father_occupation}}">
+
+
+
+                                                    <button type="submit" class=" col-lg-8  col-md-8 col-sm-8 offset-2 btn btn-primary">Waiting</button>
+
+                                                </form></td>
                                         </tr>
                                     </table>
 

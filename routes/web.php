@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function(){
   Route::get('student/request/{id}','StudentController@studentInfo')->name('student.request.info');
   Route::get('student/selected/profile/{id}','StudentController@studentProfile')->name('student.profile');
     Route::post('student/selected','StudentController@admittedStudent')->name('student.selected');
+    Route::post('student/rejected','StudentController@rejectedStudent')->name('student.rejected');
     Route::post('student/waiting','StudentController@waitingListStudent')->name('student.waiting');
 
     Route::get('student/list','StudentController@studentList')->name('student.list');

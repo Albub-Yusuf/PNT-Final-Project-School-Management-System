@@ -412,10 +412,42 @@ class StudentController extends Controller
 
     public function waitingListStudent(Request $request){
 
-        echo "Inside Student Waiting List";
+
+        DB::table('waitings')->insert(
+            [
+
+                'name' => $request->name,
+                'father_name' => $request->father_name,
+                'mother_name' => $request->mother_name,
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'permanent_address' => $request->permanent_address,
+                'present_address' => $request->present_address,
+                'day' => $request->day,
+                'month' => $request->month,
+                'year' => $request->year,
+                'sessions' => $request->sessions,
+                'birth_certificate_number' => $request->birth_certificate_number,
+                'gender' => $request->gender,
+                'class' => $request->class,
+                'department' => $request->department,
+                'student_image' => $request->student_image,
+                'student_signature' => $request->student_signature,
+                'guardian_image' => $request->guardian_image,
+                'father_occupation' => $request->father_occupation,
+                'status' => 'waiting',
+                'created_at' => now()
+
+            ]
+        );
+        Student::where('id',$request->id)->forceDelete();
+        return redirect()->route('dashboard');
     }
 
-    public function addguardian(){
+    public function rejectedStudent(Request $request){
+
+        Student::where('id',$request->id)->forceDelete();
+        return redirect()->route('dashboard');
 
     }
 
@@ -425,7 +457,6 @@ class StudentController extends Controller
         $data['status'] = 0;
         $data['sessions'] = Sessions::all();
         $data['classes'] = Classes::all();
-       // dd($data);
         return view('student.list',$data);
 
     }
@@ -452,23 +483,21 @@ class StudentController extends Controller
        $data['title'] = 'Student Edit';
        $data['studentInfo'] = DB::table('selectedStudents')->where([
            ['id', '=', $id]])->first();
-       //dd($data);
        return view('student.editstudent',$data);
 
     }
 
     public function selectedStudentUpdate(Request $request,$id){
 
-        //dd($id);
         $password = bcrypt($request->password);
         $studentImage='';
         $sid = $request->sid;
-       // dd($password);
 
         //File Upload students image
-        $student_image = '';
 
-         if($request->hasFile('student_image')){
+
+        $student_image = '';
+        if($request->hasFile('student_image')){
         if($request->hasFile('student_image')){
         $student_image = $request->file('student_image');
         $student_image->move('Backend/assets/img/students/',$student_image->getClientOriginalName());
@@ -480,7 +509,6 @@ class StudentController extends Controller
         }
 
         }
-        //dd($studentImage);
 
         if($request->student_image != NULL){
             DB::table('selectedStudents')->where('id', $id)->update([
