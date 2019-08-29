@@ -193,7 +193,7 @@
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="chartjs.html">
+                              <a class="sidenav-item-link" href="{{route('collect.fee')}}">
                                 <span class="nav-text">Collect Fee</span>
                                 
                               </a>
