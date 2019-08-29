@@ -50,10 +50,10 @@
                                 </div>
                                 <select name="classes" class="form-control" id="classes">
                                     <option value="">Select Class</option>
-                                        @foreach($classes as $class)
-                                            <option value="{{$class->code}}">{{$class->name}}</option>
-                                        @endforeach
-                                    </select>
+                                    @foreach($classes as $class)
+                                        <option value="{{$class->code}}">{{$class->name}}</option>
+                                    @endforeach
+                                </select>
 
                                 </select>
                             </div>

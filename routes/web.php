@@ -48,6 +48,18 @@ Route::middleware('auth')->group(function(){
 
     Route::resource('teacher','TeacherController');
 
+    Route::get('attendance','AttendanceController@index')->name('attendance.list');
+    Route::post('attendance/chart','AttendanceController@giveAttendance')->name('attendance.give');
+    Route::post('attendance/gv','AttendanceController@store')->name('attendance.store');
+
+    Route::get('fee','FeeController@collectFee')->name('collect.fee');
+    Route::post('fee','FeeController@store')->name('fee.store');
+
+
+
+
+
+
 
 
 });
