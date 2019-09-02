@@ -67,6 +67,9 @@ Route::middleware('auth')->group(function(){
 
     Route::resource('subject','SubjectController');
 
+    Route::get('session/create','SessionController@create')->name('session.create');
+    Route::post('session','SessionController@store')->name('session.store');
+
 
 
 

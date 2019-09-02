@@ -163,12 +163,7 @@
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
                                 @if($status == 0)
-                                    <div class="row">
-                                        <div class="col-lg-8 offset-2">
-                                            <div class="card card-default">
-                                                <div class="card-header card-header-border-bottom">
-                                                    <h3 class="text-center">{{$title}}</h3>
-                                                </div>
+
                                                 <div class="card-body">
 
                                                     <form action="{{route('student.result.show')}}" method="post">
@@ -212,16 +207,9 @@
 
 
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 @elseif($status == 1)
-                                    <div class="row">
-                                        <div class="col-lg-8 offset-2">
-                                            <div class="card card-default">
-                                                <div class="card-header card-header-border-bottom">
-                                                    <h3 class="text-center">{{$title}}:  {{$exam}}</h3>
-                                                </div>
+
                                                 <div class="card-body">
 
                                                     <table class="table table-responsive">
@@ -241,17 +229,8 @@
 
                                                         @endforeach
                                                         </tbody>
-
                                                     </table>
-
-
-
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
                                 @endif
 
 

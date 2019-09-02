@@ -48,8 +48,8 @@
                               </a>
                             </li>
                              <li >
-                              <a class="sidenav-item-link" href="chartjs.html">
-                                <span class="nav-text">Send Notice</span>
+                              <a class="sidenav-item-link" href="{{route('session.create')}}">
+                                <span class="nav-text">Create New Session</span>
 
                               </a>
                             </li>
