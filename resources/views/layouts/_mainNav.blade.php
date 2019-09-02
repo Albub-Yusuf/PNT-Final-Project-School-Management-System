@@ -43,8 +43,8 @@
                               </a>
                             </li>
                             <li >
-                              <a class="sidenav-item-link" href="{{route('user.manage')}}">
-                                 <span class="nav-text">Manage Admin</span>
+                              <a class="sidenav-item-link" href="{{route('exam.create')}}">
+                                 <span class="nav-text">Create Exam</span>
                               </a>
                             </li>
                              <li >
@@ -208,22 +208,22 @@
                     </ul>
                   </li>
                 
-                <!--Course-->
+                <!--Subjects-->
                   <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#Course"
-                      aria-expanded="false" aria-controls="Course">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#Subject"
+                      aria-expanded="false" aria-controls="Subject">
                       <i class="mdi mdi-chart-pie"></i>
-                      <span class="nav-text">Course</span> <b class="caret"></b>
+                      <span class="nav-text">Subject</span> <b class="caret"></b>
                     </a>
-                    <ul  class="collapse"  id="Course"
+                    <ul  class="collapse"  id="Subject"
                       data-parent="#sidebar-menu">
                       <div class="sub-menu">
                         
                         
                           
                             <li >
-                              <a class="sidenav-item-link" href="chartjs.html">
-                                <span class="nav-text">Add Course</span>
+                              <a class="sidenav-item-link" href="{{route('subject.create')}}">
+                                <span class="nav-text">Add Subject</span>
                                 
                               </a>
                             </li>

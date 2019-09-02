@@ -43,6 +43,9 @@ Route::middleware('auth')->group(function(){
     Route::get('student/selected/edit/{id}','StudentController@selectedStudentEdit')->name('student.selected.edit');
     Route::post('student/selected/discard/{id}','StudentController@selectedStudentDelete')->name('student.selected.discard');
     Route::post('student/selected/update/{id}','StudentController@selectedStudentUpdate')->name('student.selected.update');
+    Route::get('result/search','StudentController@searchExamResult')->name('student.result.search');
+    Route::post('student/selected/profile','StudentController@showResult')->name('student.result.show');
+
 
     Route::resource('student','StudentController');
 
@@ -54,6 +57,15 @@ Route::middleware('auth')->group(function(){
 
     Route::get('fee','FeeController@collectFee')->name('collect.fee');
     Route::post('fee','FeeController@store')->name('fee.store');
+
+    Route::get('test','TestController@index')->name('test.index');
+    Route::post('test/show','TestController@show')->name('test.show');
+    Route::post('test','TestController@store')->name('test.store');
+
+    Route::get('exam','ExamController@create')->name('exam.create');
+    Route::post('exam','ExamController@store')->name('exam.store');
+
+    Route::resource('subject','SubjectController');
 
 
 

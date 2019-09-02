@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Classes;
+use App\Exam;
 use App\Sessions;
 use App\Student;
+use App\Test;
 use Illuminate\Http\Request;
 use File;
 use DB;
@@ -467,9 +469,9 @@ class StudentController extends Controller
         $data['status'] = 1;
         $data['class'] = $request->classes;
         $data['students'] = DB::table('selectedStudents')->where([
-         ['sessions', '=', $request->sessions],
-         ['class', '=', $request->classes],
-         ])->get();
+            ['sessions', '=', $request->sessions],
+            ['class', '=', $request->classes],
+        ])->get();
 
        return view('student.list',$data);
 
@@ -579,8 +581,9 @@ class StudentController extends Controller
         }
 
         public function studentProfile($id){
-
+            $data['status'] = 0;
             $data['title'] = 'Student Profile';
+            $data['exams'] = Exam::all();
             $data['studentInfo'] = DB::table('selectedStudents')->where([
                 ['id', '=', $id]])->first();
             return view('student.profile',$data);
@@ -593,6 +596,36 @@ class StudentController extends Controller
 
         DB::table('selectedStudents')->where('id', '=', $id)->delete();
         return redirect()->route('dashboard');
+
+    }
+
+    public function searchExamResult(){
+
+        $data['title'] = 'Search Result';
+        $data['status'] = 0;
+        $data['exams'] = Exam::all();
+        $data['sessions'] = Sessions::all();
+        $data['classes'] = Classes::all();
+        return view('student.result',$data);
+
+    }
+    public function showResult(Request $request){
+
+        $data['title'] = 'Marks';
+        $data['exam'] = $request->exams;
+
+        $data['results'] = DB::table('tests')->select('subject_name','sub1_marks')->where([
+            ['sessions', '=', $request->sessions],
+            ['class', '=', $request->classes],
+            ['exam_name', '=', $request->exams],
+            ['roll','=',$request->roll]
+        ])->get();
+        //dd($data);
+        $data['status'] = 1;
+        $data['studentInfo'] = DB::table('selectedStudents')->where([
+            ['id', '=', $request->roll]])->first();
+
+        return view('student.profile',$data);
 
     }
 

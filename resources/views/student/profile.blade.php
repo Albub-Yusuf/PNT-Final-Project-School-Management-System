@@ -73,7 +73,7 @@
                                 <a class="nav-link active" id="timeline-tab" data-toggle="tab" href="#timeline" role="tab" aria-controls="timeline" aria-selected="true">Timeline</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Result</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="assesment-tab" data-toggle="tab" href="#assesment" role="tab" aria-controls="assesment" aria-selected="false">Assesment</a>
@@ -81,9 +81,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" id="attendance-tab" data-toggle="tab" href="#attendance" role="tab" aria-controls="attendance" aria-selected="false">Attendance</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="results-tab" data-toggle="tab" href="#results" role="tab" aria-controls="results" aria-selected="false">Results</a>
-                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" id="notice-tab" data-toggle="tab" href="#notice" role="tab" aria-controls="notice" aria-selected="false">Notice</a>
                             </li>
@@ -162,7 +160,102 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                @if($status == 0)
+                                    <div class="row">
+                                        <div class="col-lg-8 offset-2">
+                                            <div class="card card-default">
+                                                <div class="card-header card-header-border-bottom">
+                                                    <h3 class="text-center">{{$title}}</h3>
+                                                </div>
+                                                <div class="card-body">
+
+                                                    <form action="{{route('student.result.show')}}" method="post">
+                                                        @csrf
+                                                        @method('POST')
+
+                                                        <input type="hidden" name="sessions" value="{{$studentInfo->sessions}}">
+
+                                                        <input type="hidden" name="classes" value="{{$studentInfo->class}}">
+
+
+                                                        <div class="form-group">
+                                                            <label>Select Exams</label>
+                                                            <div class="input-group mb-2">
+                                                                <div class="input-group-prepend">
+														<span class="input-group-text">
+															<i class="mdi mdi-"></i>
+                                                        </span>
+                                                                </div>
+                                                                <select name="exams" class="form-control" id="exams">
+                                                                    <option value="">Select Exams</option>
+                                                                    @foreach($exams as $exam)
+                                                                        <option value="{{$exam->exam_name}}">{{$exam->exam_name}}</option>
+                                                                    @endforeach
+                                                                </select>
+
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <input type="hidden" name="roll" value="{{$studentInfo->roll}}">
+
+                                                        <div class="form-footer pt-5 border-top text-center">
+                                                            <button type="submit" class="btn btn-primary btn-default">Search</button>
+                                                        </div>
+
+
+
+                                                    </form>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @elseif($status == 1)
+                                    <div class="row">
+                                        <div class="col-lg-8 offset-2">
+                                            <div class="card card-default">
+                                                <div class="card-header card-header-border-bottom">
+                                                    <h3 class="text-center">{{$title}}:  {{$exam}}</h3>
+                                                </div>
+                                                <div class="card-body">
+
+                                                    <table class="table table-responsive">
+                                                        <thead class="thead">
+                                                        <tr>
+                                                            <th>Subject Name</th>
+                                                            <th>Subject Marks</th>
+                                                        </tr>
+
+                                                        </thead>
+                                                        <tbody>
+                                                        @foreach($results as $result)
+                                                            <tr>
+                                                                <td>{{$result->subject_name}}</td>
+                                                                <td>{{$result->sub1_marks}}</td>
+                                                            </tr>
+
+                                                        @endforeach
+                                                        </tbody>
+
+                                                    </table>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                @endif
+
+
+                            </div>
                             <div class="tab-pane fade" id="my" role="tabpanel" aria-labelledby="my-tab">...</div>
 
                             <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
