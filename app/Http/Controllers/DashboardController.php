@@ -11,20 +11,29 @@ class DashboardController extends Controller
 
         $mmonth = date('m');
         $month = (int)$mmonth;
+        $mnt = (int)$mmonth;
         $yyear = date('y');
-        $year = (int)$yyear;
-        $a = array();
+        $my = (int)$yyear;
 
 
 
+        //$count = DB::table('category_issue')->count();
 
-        $a = DB::table('fees')->select('amount')->where([
-           ['month', '=', 9],
-            ['year','=', 2019]
-        ])->get();
+        $data['total_fees'] = DB::table("fees")->where([
+             ['month', '=', $mnt],
+            ['year', '=', 2019]
+        ])->sum('amount');
+
+       // print_r($data);
+        //$a = DB::table('fees')->select->sum('amount')->where([
+          // ['month', '=', 9],
+            //['year','=', 2019]
+  //      ])->get();
 //dd($data);
-dd(array_sum($a));
-    	//$data['title'] = 'Dashboard';
-    	//return view('admin.dashboard',$data);
+    // $res =   array_sum($a);
+//dd($orders);
+
+    	$data['title'] = 'Dashboard';
+    	return view('admin.dashboard',$data);
     }
 }
