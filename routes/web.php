@@ -70,6 +70,7 @@ Route::middleware('auth')->group(function(){
     Route::get('session/create','SessionController@create')->name('session.create');
     Route::post('session','SessionController@store')->name('session.store');
 
+    Route::resource('notice','NoticeController');
 
 
 

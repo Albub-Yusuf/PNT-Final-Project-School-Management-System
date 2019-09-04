@@ -24,6 +24,7 @@
             <table class="table table-stripped table-responsive ">
                 <tbody>
                 @foreach($users as $user)
+                    @if(($user->type == 'admin') || ($user->type == 'manager') )
                     @php
                         if($user->file == NULL){
                             $image = 'Backend/assets/img/user/placeholder.png';
@@ -67,6 +68,7 @@
                     </td>
 
                 </tr>
+                    @endif
                 @endforeach
                 </tbody>
             </table>

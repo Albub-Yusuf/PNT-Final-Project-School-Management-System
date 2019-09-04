@@ -38,7 +38,7 @@
 
 					<span class="login100-form-title">
 						
-								<h5>Admin Login</h5>
+								<h5>Member Login</h5>
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -56,6 +56,32 @@
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
+
+					<!--test-->
+<!--
+					<ul class="list-unstyled list-inline">
+						<li class="d-inline-block mr-3">
+							<label for="admin" class="control control-radio">Admin
+								<input type="radio" id="admin" value="admin" name="adminType" checked="checked" />
+								<div class="control-indicator"></div>
+							</label>
+						</li>
+						<li class="d-inline-block mr-3">
+							<label for="teacher" class="control control-radio">Teacher
+								<input type="radio" id="teacher" value="teacher" name="adminType" />
+								<div class="control-indicator"></div>
+							</label>
+						</li>
+
+						<li class="d-inline-block mr-3">
+							<label for="student" class="control control-radio">Student
+								<input type="radio" id="student" value="student" name="adminType" />
+								<div class="control-indicator"></div>
+							</label>
+						</li>
+					</ul>
+-->
+
 					
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">

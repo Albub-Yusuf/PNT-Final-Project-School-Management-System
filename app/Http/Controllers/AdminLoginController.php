@@ -18,22 +18,20 @@ class AdminLoginController extends Controller
     	$request->validate([
 
     		'email' => 'required|email',
-    		'password' => 'required'
+    		'password' => 'required',
     	]);
 
     	$mail = $request->email;
+    	$userType = $request->adminType;
+    	//echo $userType;
 
     	
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('email', 'password','type');
 
         if (Auth::attempt($credentials)) {
-            // Authentication passed...
-        	//echo "Logged In";
-            //return redirect()->route('dashboard');
-            //$data['auth-info'] = auth()->user();
-           
 
-           return redirect()->intended('dashboard');
+                return redirect()->intended('dashboard');
+
         }
         else{
             echo "not working";

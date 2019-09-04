@@ -16,8 +16,8 @@
                         <label>Select Admin Type</label>
                         <select name="adminType" class="form-control" id="adminType">
                             <option value="">Choose Admin Type</option>
-                            <option value="1">Admin</option>
-                            <option value="2">Manager</option>
+                            <option value="admin">Admin</option>
+                            <option value="manager">Manager</option>
                         </select>
                     </div>
 

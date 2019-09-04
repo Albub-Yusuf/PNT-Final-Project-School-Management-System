@@ -7,6 +7,7 @@ use App\Exam;
 use App\Sessions;
 use App\Student;
 use App\Test;
+use App\Notice;
 use Illuminate\Http\Request;
 use File;
 use DB;
@@ -584,8 +585,22 @@ class StudentController extends Controller
             $data['status'] = 0;
             $data['title'] = 'Student Profile';
             $data['exams'] = Exam::all();
-            $data['studentInfo'] = DB::table('selectedStudents')->where([
+            $data['notices'] = Notice::orderBy('id','DESC')->get();
+            $student_record = $data['studentInfo'] = DB::table('selectedStudents')->where([
                 ['id', '=', $id]])->first();
+
+           $roll = $student_record->roll;
+           $class = $student_record->class;
+           $sessions = $student_record->sessions;
+
+           $data['payments'] = DB::table('fees')->where([
+               ['sessions','=',$sessions ],
+               ['class','=',$class],
+               ['roll','=',$roll]
+           ])->get();
+
+           //dd($data);
+
             return view('student.profile',$data);
 
         }
@@ -611,6 +626,7 @@ class StudentController extends Controller
     }
     public function showResult(Request $request){
 
+        //dd($request->all());
         $data['title'] = 'Marks';
         $data['exam'] = $request->exams;
 
@@ -623,7 +639,18 @@ class StudentController extends Controller
         //dd($data);
         $data['status'] = 1;
         $data['studentInfo'] = DB::table('selectedStudents')->where([
-            ['id', '=', $request->roll]])->first();
+            ['sid', '=', $request->sid]])->first();
+
+        $roll = $request->roll;
+        $class = $request->classes;
+        $sessions = $request->sessions;
+        $data['payments'] = DB::table('fees')->where([
+            ['sessions','=',$sessions ],
+            ['class','=',$class],
+            ['roll','=',$roll]
+        ])->get();
+
+        $data['notices'] = Notice::orderBy('id','DESC')->get();
 
         return view('student.profile',$data);
 
